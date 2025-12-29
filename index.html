@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Engineer Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="application-container">
+        <div class="app-header">
+            <h1>Backend Engineer</h1>
+            <p>Join our team and help build scalable solutions</p>
+        </div>
+
+        <style>
+            .progress-container.sticky {
+                position: fixed;
+                top: 50px;
+                left: 0;
+                width: 100%;
+                z-index: 500;
+            }
+        </style>
+
+        <script>
+            const headerHeight = document.getElementById('header').offsetHeight;
+            const progressContainer = document.querySelector('.progress-container');
+
+            window.addEventListener('scroll', () => {
+                const rect = progressContainer.getBoundingClientRect();
+                if (rect.top <= headerHeight) {
+                    progressContainer.classList.add('sticky');
+                } else {
+                    progressContainer.classList.remove('sticky');
+                }
+            });
+        </script>
+
+        <div class="progress-container">
+            <div class="progress-steps">
+                <div class="progress-line">
+                    <div class="progress-line-fill" id="progressFill"></div>
+                </div>
+                <div class="step active" data-step="1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Job Details</div>
+                </div>
+                <div class="step" data-step="2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Application Form</div>
+                </div>
+                <div class="step" data-step="3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Terms & Conditions</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="step-content active" id="step1">
+                <h2 class="content-title">Backend Engineer Position</h2>
+                
+                <div class="job-details">
+                    <div class="job-section">
+                        <h3>About the Role</h3>
+                        <p>We are seeking a talented Backend Engineer to join our engineering team. In this role, you will design, develop, and maintain robust server-side applications that power our platform. You'll work with cutting-edge technologies and collaborate with cross-functional teams to deliver high-quality solutions.</p>
+                    </div>
+                    
+                    <div class="job-section">
+                        <h3>Position Details</h3>
+                        <ul class="position-details">
+                            <li>Position: Senior Backend Engineer</li>
+                            <li>Department: Engineering</li>
+                            <li>Location: Cape Town, WC (Hybrid)</li>
+                            <li>Experience Level: Mid-Senior (3-7 years)</li>
+                            <li>Employment Type: Full-time</li>
+                            <li>Salary Range: R360,000 - R480,000/year</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-section">
+                        <h3>Key Responsibilities</h3>
+                        <ul>
+                            <li>Design and implement RESTful APIs and microservices architecture</li>
+                            <li>Optimize database queries and ensure efficient data management</li>
+                            <li>Write clean, maintainable, and well-documented code</li>
+                            <li>Collaborate with frontend developers to integrate user-facing elements</li>
+                            <li>Implement security and data protection measures</li>
+                            <li>Participate in code reviews and maintain high code quality standards</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-section">
+                        <h3>Required Qualifications</h3>
+                        <ul>
+                            <li>Bachelor's degree in Computer Science or related field</li>
+                            <li>3+ years of experience in backend development</li>
+                            <li>Proficiency in Node.js, Python, or Java</li>
+                            <li>Strong understanding of database systems (SQL and NoSQL)</li>
+                            <li>Experience with cloud platforms (AWS, Azure, or GCP)</li>
+                            <li>Excellent problem-solving and communication skills</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-section">
+                        <h3>What We Offer</h3>
+                        <ul>
+                            <li>Competitive salary and equity package</li>
+                            <li>Flexible work arrangements and remote options</li>
+                            <li>Professional development opportunities</li>
+                            <li>Comprehensive health and wellness benefits</li>
+                            <li>Collaborative and innovative work environment</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <div></div>
+                    <button class="btn btn-primary" onclick="nextStep()">Continue to Application</button>
+                </div>
+            </div>
+
+            <div class="step-content" id="step2">
+                <h2 class="content-title">Application Form</h2>
+                
+                <form id="applicationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">First Name <span class="required">*</span></label>
+                            <input type="text" class="form-input" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name <span class="required">*</span></label>
+                            <input type="text" class="form-input" id="lastName" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address <span class="required">*</span></label>
+                        <input type="email" class="form-input" id="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number <span class="required">*</span></label>
+                        <input type="tel" class="form-input" id="phone" placeholder="e.g, 071 234 5678" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">LinkedIn Profile</label>
+                        <input type="url" class="form-input" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">X/Twitter Profile</label>
+                        <input type="url" class="form-input" id="linkedin" placeholder="https://x.com/in/yourprofile">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">GitHub Profile</label>
+                        <input type="url" class="form-input" id="linkedin" placeholder="https://yourprofile.github.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Years of Experience <span class="required">*</span></label>
+                        <select class="form-select" id="experience" required>
+                            <option value="">Select your experience</option>
+                            <option value="0-2">0-2 years</option>
+                            <option value="3-5">3-5 years</option>
+                            <option value="6-8">6-8 years</option>
+                            <option value="9+">9+ years</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Primary Programming Language <span class="required">*</span></label>
+                        <select class="form-select" id="language" required>
+                            <option value="">Select a language</option>
+                            <option value="nodejs">Node.js</option>
+                            <option value="python">Python</option>
+                            <option value="java">Java</option>
+                            <option value="golang">Go</option>
+                            <option value="ruby">Ruby</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Cover Letter <span class="required">*</span></label>
+                        <textarea class="form-textarea" id="coverLetter" placeholder="Tell us why you're interested in this position and what makes you a great fit..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Resume/CV <span class="required">*</span></label>
+                        <input type="file" class="file-upload-input" id="resume" accept=".pdf,.doc,.docx" required>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" onclick="previousStep()">Back</button>
+                        <button type="button" class="btn btn-primary" onclick="validateAndNext()">Continue to Terms</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="step-content" id="step3">
+                <h2 class="content-title">Terms & Conditions</h2>
+                
+                <div class="terms-content">
+                    <h4>1. Application Process</h4>
+                    <p>By submitting this application, you acknowledge that all information provided is accurate and complete to the best of your knowledge. Any false or misleading information may result in disqualification from the hiring process or termination if discovered after employment.</p>
+
+                    <h4>2. Data Privacy and Protection</h4>
+                    <p>We collect and process your personal information in accordance with applicable data protection laws. Your data will be used solely for recruitment purposes and will be stored securely. We will retain your information for the duration of the recruitment process and may keep it on file for future opportunities unless you request deletion.</p>
+
+                    <h4>3. Equal Opportunity Employment</h4>
+                    <p>We are an equal opportunity employer and value diversity. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. All employment decisions are based on qualifications, merit, and business needs.</p>
+
+                    <h4>4. Confidentiality</h4>
+                    <p>Any information shared during the interview process, including but not limited to technical challenges, business strategies, or proprietary information, must be kept confidential and not disclosed to third parties.</p>
+
+                    <h4>5. Background Verification</h4>
+                    <p>If selected for employment, you may be required to undergo background verification, including education verification, employment history, and reference checks. Your consent for such verification is implied upon submission of this application.</p>
+
+                    <h4>6. At-Will Employment</h4>
+                    <p>Employment with our company is at-will, meaning either party may terminate the employment relationship at any time, with or without cause or notice, subject to applicable laws and regulations.</p>
+
+                    <h4>7. Communication</h4>
+                    <p>By providing your contact information, you consent to receive communications from us regarding your application status and other recruitment-related matters via email, phone, or other electronic means.</p>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" class="checkbox-input" id="termsAgree" required>
+                    <label class="checkbox-label" for="termsAgree">
+                        I have read and agree to the terms and conditions outlined above. I confirm that all information provided in my application is true and accurate.
+                    </label>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="previousStep()">Back</button>
+                    <button class="btn btn-primary" id="submitBtn" onclick="submitApplication()" disabled>Submit Application</button>
+                </div>
+            </div>
+
+            <div class="step-content" id="success">
+                <div class="success-message">
+                    <div class="success-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                        </svg>
+                    </div>
+                    <h2>Application Submitted Successfully!</h2>
+                    <p>Thank you for applying to the Backend Engineer position. We have received your application and will review it carefully. You should receive a confirmation email shortly. We'll be in touch if your qualifications match our requirements.</p>
+                </div>
+            <a href="index.html"><p style="font-size: 1rem; color: #0091ff; text-decoration: underline; text-align: center;">Return to Careers</p></a>    
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
