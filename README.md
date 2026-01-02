@@ -6,7 +6,7 @@ This project is a fully functional job application portal specifically designed 
 
 ## Live Preview
 
-Access the live demonstration: [Application Portal](https://thisislefa.github.io/Application-Portal)
+Access the live demonstration: [Application Portal](https://lefajmofokeng.github.io/Application-Portal)
 
 
 ## Features
@@ -140,5 +140,6 @@ This project demonstrates proficiency in:
 ---
 
 *Note: This is a demonstration project showcasing front-end development capabilities. In a production environment, additional considerations for data security, server-side validation, and compliance with employment regulations would be necessary.*
+
 
 
